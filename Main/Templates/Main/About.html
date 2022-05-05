@@ -1,0 +1,131 @@
+{% extends 'Main/Basic.html' %}
+{% load static %}
+{% block css %}
+  <style>
+  body{
+  }
+  .container{
+  position: relative;
+  }
+    .headerimg{
+    margin: auto;
+    max-width: 100%;
+    height : auto;
+    }
+
+    .about_us{
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-family: Impact;
+    }
+
+.main.container {
+  padding: 64px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 20px;
+}
+
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+.large-font {
+  font-size: 48px;
+  font-family: Impact;
+
+}
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+  }
+  .about_us{
+  font-size: 30px;
+  }
+}
+  </style>
+{% endblock %}
+
+{% block body %}
+
+<div class="Header">
+<div class="container">
+  <img src="{% static 'bg.jpg' %}" class="headerimg">
+  <div class="about_us">About Us</div>
+</div>
+</div>
+
+
+<div class="main">
+  <div class="container">
+    <div class="row">
+     <div class="column-33">
+         <img src="{% static 'logo1.png' %}">
+     </div>
+     <div class="column-66">
+        <p style="font-family: Arial, sans-serif;"><span style="font-size:36px">ScrapStop</span> is a recycling company in India which provides a comprehensive scrap
+         and waste management services in district, ensuring services from collection and
+          disposal of waste or scrap to recycling and generation of renewable energy.
+         We ensure all discarded scrap or waste are efficiently managed, disposed and recycled </p>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+      <h1 class="large-font" style="color:MediumSeaGreen;"><b>Our Mission</b></h1>
+      <p style="font-family: Arial, sans-serif;">Our mission is to ensure industries, companies, corporates and government agencies to provide a
+        profitable model for complying with both their legal and social responsibilities towards the
+        environment by:</p>
+      <ul>
+        <li>Reducing pollution and toxicity </li>
+        <li>Conserving natural resources</li>
+        <li>Reducing product life cycle cost</li>
+        <li>Minimizing carbon footprint</li>
+      </ul>
+    </div>
+    <div class="column-33">
+      <img src="{% static 'mission.jpg' %}">
+    </div>
+  </div>
+</div>
+
+<div class="slogan" style="align: center; padding: 20px;">
+  <h1 style="font-size: 30px; color: green;font-family: Impact">Our aim is to reduce, recycle, reuse of waste or scrap in the most cost effective, various methods or recycling.</h1>
+</div>
+{% endblock %}
+
+
+
+
+
+

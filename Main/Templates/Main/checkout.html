@@ -1,0 +1,43 @@
+{% extends 'Main/Basic.html' %}
+
+
+{% block body %}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>scrap</th>
+                            <th>weight</th>
+                            <th>pickup date</th>
+                            <th>total price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in orders %}
+                        <tr>
+                            <th>{{item.order_id}}</th>
+                            <th>{{item.Scrap}}</th>
+                            <th>{{item.Weight}} kg</th>
+                            <th></th>
+                            <th>{{item.Total_Price}} Rs</th>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

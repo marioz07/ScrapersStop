@@ -1,0 +1,464 @@
+{% extends 'Main/Basic.html' %}
+{% load static %}
+{% block head %}
+{% endblock %}
+{% block css %}
+    <style>
+      body {
+        background-color: #86B3D1;
+        font-family: Arial, Helvetica, sans-serif;
+
+      }
+
+      .topnav {
+        overflow: hidden;
+        background-color: #5F6366;
+      }
+
+      .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+
+      }
+
+      .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .topnav-right {
+        float: right;
+      }
+      .patta{
+        height: 10px;
+        width: auto;
+        background-color: blue;
+      }
+      .star{
+        margin-top: px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #000;
+      }
+
+      h5 {
+        position: relative;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        font-size: 2em;
+        letter-spacing: 4px;
+        overflow: hidden;
+        background: linear-gradient(90deg, #000, #fff, #000);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        animation: animate 3s linear infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255, 255, 255, 0);
+      }
+
+      @keyframes animate {
+        0% {
+          background-position: -500%;
+        }
+        100% {
+          background-position: 500%;
+        }
+      }
+      .scrap{
+        height: 500px;
+        width: auto;
+        background-image: url('{% static "stat.jpg"%}');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .mon{
+        height: auto;
+        width: auto;
+        background-color: pink;
+      }
+      .wot{
+        margin-left: 800px;
+
+        background-color: white;
+        height: 300px;
+        width: 400px;;
+      }
+      .bod {
+        background-color: #f1f1f1;
+        padding: 20px;
+        font-family: Arial;
+      }
+
+      /* Center website */
+      .main {
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      h1 {
+        font-size: 50px;
+        word-break: break-all;
+      }
+
+      .row {
+        margin: 10px -16px;
+      }
+
+      /* Add padding BETWEEN each column */
+      .row,
+      .row > .column {
+        padding: 8px;
+      }
+
+      /* Create three equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 33.33%;
+        display: none; /* Hide all elements by default */
+      }
+
+      /* Clear floats after rows */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Content */
+      .content {
+        background-color: white;
+        padding: 10px;
+      }
+
+      /* The "show" class is added to the filtered elements */
+      .show {
+        display: block;
+      }
+
+      /* Style the buttons */
+      .btn {
+        border: none;
+        outline: none;
+        padding: 12px 16px;
+        background-color: white;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #ddd;
+      }
+
+      .btn.active {
+        background-color: #666;
+        color: white;
+      }
+      .imp{
+        height: 500px;;
+        padding: 100px;
+        background-image: url('{% static "imp.jpg"%}');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .impp{
+        text-align: center;
+        background-color: grey;
+        height: 300px;
+      }
+      .con{
+        height: 500px;;
+        padding: 100px;
+        background-image: url('{% static "leaff.jpg"%}');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .sur{
+        padding-left: 120px;
+      }
+      #an{
+        padding-left: 27px;
+        font-weight: bold;
+        font-style: oblique;
+      }
+      .hhhh{
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-align: center;
+        font-family: sans-serif;
+
+      }
+    </style>
+{% endblock %}
+{% block body %}
+  <body>
+
+    <div class="patta"></div>
+    <div>
+      <div>
+        <div class="star">
+          <h5 id="inline">Scrappersstop.com</h5>
+        </div>
+      </div>
+    </div>
+    <div class="patta"></div>
+
+    <div class="scrap">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="wot">
+        <h3>What Is Scrap?</h3>
+        <p>Scrap consists of recyclable materials left over from product manufacturing and consumption, such as parts of vehicles, building supplies, and surplus materials. Unlike waste, scrap has monetary value, especially recovered metals, and non-metallic materials are also recovered for recycling.</p>
+      </div>
+    </div>
+    <div class="mon">
+      <!-- MAIN (Center website) -->
+      <div class="bod">
+      	<div class="main">
+
+      <h1>Types Of Scrap</h1>
+      <hr>
+
+      <h2>PORTFOLIO</h2>
+
+      <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterSelection('nature')"> Nature</button>
+        <button class="btn" onclick="filterSelection('cars')"> Cars</button>
+        <button class="btn" onclick="filterSelection('people')"> People</button>
+      </div>
+
+      <!-- Portfolio Gallery Grid -->
+      <div class="row">
+        <div class="column nature">
+          <div class="content">
+            <img src="{% static 'steel.jpg' %}" alt="Mountains" style="width:100%">
+            <h4>Mountains</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+        <div class="column nature">
+          <div class="content">
+          <img src="{% static 'copper.jpg' %}" alt="Nature" style="width:100%">
+            <h4>Forest</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+        <div class="column nature">
+          <div class="content">
+          <img src="{% static 'brass.jpg' %}" alt="Nature" style="width:100%">
+            <h4>Forest</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+
+        <div class="column cars">
+          <div class="content">
+            <img src="{% static 'ele.jpg' %}" alt="Car" style="width:100%">
+            <h4>Retro</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+        <div class="column cars">
+          <div class="content">
+          <img src="{% static 'pll.jpg' %}" alt="Car" style="width:100%">
+            <h4>Fast</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+        <div class="column cars">
+          <div class="content">
+          <img src="{% static 'pap.jpg' %}" alt="Car" style="width:100%">
+            <h4>Classic</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+
+        <div class="column people">
+          <div class="content">
+            <img src="{% static 'med.jpg' %}" alt="Car" style="width:100%">
+            <h4>Girl</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+        <div class="column people">
+          <div class="content">
+          <img src="{% static 'haz.jpg' %}" alt="Car" style="width:100%">
+            <h4>Man</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+        <div class="column people">
+          <div class="content">
+          <img src="{% static 'ccc.jpg' %}" alt="Car" style="width:100%">
+            <h4>Woman</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+        <div class="column people">
+          <div class="content">
+          <img src="{% static 'ccc.jpg' %}" alt="Car" style="width:100%">
+            <h4>Woman</h4>
+            <p>Lorem ipsum dolor..</p>
+          </div>
+        </div>
+      <!-- END GRID -->
+      </div>
+
+      <!-- END MAIN -->
+      </div>
+      </div>
+    </div>
+
+    <div class="imp">
+      <div class="impp">
+        <h3 style="color: yellow;">The Importance of Recycling your Old Scrap Metal</h3>
+        <p>Recycling is becoming more and more prevalent in our society as landfills everywhere begin to reach capacity. Scrap metal is a prime example of a win-win recycling situation. Both you and Mother Earth benefit when your old metal scraps are given a second life.</p>
+        <ul><i></i>
+          <li>It Leaves Room in Landfills for Non-Recyclable Items</li>
+          <li>It Improves Air and Ground Water Quality</li>
+          <li>Reduces the effect of waste on the environment</li></i>
+        </ul>
+      </div>
+
+    </div>
+    <div class="con">
+      <div class="sur">
+        <b><h2>So what can one do For Are Surrounding??</h2></b>
+
+        <br>
+        <h6 id="an"> So here are some things everyone one should do. </h6>
+        <ul>
+          <li>Reduce, reuse, and recycle. Cut down on what you throw away. Follow the three "R's" to conserve natural resources and landfill space.</li>
+          <li>Volunteer. Volunteer for cleanups in your community. You can get involved in protecting your watershed, too.</li>
+          <li>Shop wisely. Buy less plastic and bring a reusable shopping bag</li>
+          <li>Plant more and more trees in our surroundings and nurture the ones already present.</li>
+          <li>Reduce usage of chemicals and pesticides</li>
+          <li>Stop drinking water from a plastic bottle.</li>
+          <li>Choose locally-sourced, organic food. The use of fewer toxins and chemicals, along with a shorter travel distance, means not as much of an impact on the environment.</li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="hhhh">
+      <h3 > Things We Contribute to Towards betterment of our Surrounding</h3>
+    </div>
+    <div class="">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 mb-4">
+                  <div class="card">
+                      <img class="card-img-top" src="" alt="">
+
+                      <div class="card-body">
+                          <h5 class="card-title">Scrap Management</h5>
+                          <p class="card-text">
+                              We Recycle Over 90% of All the Scrap That We Collect.
+
+
+                          </p>
+
+                          <a href="#" class="btn btn-outline-primary btn-sm">
+                              Card link
+                          </a>
+                          <a href="#" class="btn btn-outline-secondary btn-sm">
+                              <i class="far fa-heart"></i></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6 mb-4">
+                  <div class="card">
+                      <img class="card-img-top" src="" alt="">
+
+                      <div class="card-body">
+                          <h5 class="card-title">Event Management</h5>
+                          <p class="card-text">
+                              We Connect people to various events and Ngo's
+                          </p>
+
+                          <a href="#" class="btn btn-outline-primary btn-sm">
+                              Card link
+                          </a>
+                          <a href="#" class="btn btn-outline-secondary btn-sm">
+                              <i class="far fa-heart"></i></a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block js %}
+
+
+    <script>
+      filterSelection("all")
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function(){
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+      </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+{% endblock %}
+
