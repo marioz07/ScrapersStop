@@ -58,7 +58,7 @@ def logoutUser(request):
 
 
 def home(request):
-    return render(request, 'Main/index.html')
+    return render(request, 'Main/home.html')
 
 
 def contactus(request):
@@ -113,6 +113,7 @@ def sell(request):
         Weight = request.POST.get('Weight', '')
         Address1 = request.POST.get('Address1', '')
         Address2 = request.POST.get('Address2', '')
+        Pickup_date = request.POST.get('Pickup_date', '')
         locality = request.POST.get('locality', '')
 
         if Scrap.__eq__(Metal):
@@ -126,11 +127,12 @@ def sell(request):
         elif Scrap.__eq__(Aluminium):
             Price = 30
 
+        x = Price
 
-        Total_price = Price * int(Weight)
+        Total_price = x * int(Weight)
 
         order = Orders(Scrap=Scrap, Total_Price=Total_price, Weight=Weight, Address1=Address1, Address2=Address2,
-                       locality=locality, user=user)
+                       locality=locality,Pickup_date = Pickup_date, user=user)
         order.save()
 
         thank = True
